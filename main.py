@@ -13,7 +13,6 @@ def getApiKey():
     """Retrieves API Key from secrets.yaml (if already exists)
 
     If not, create the file and write the API Key given by the user's input"""
-
     global TOKEN
 
     try:
@@ -25,18 +24,18 @@ def getApiKey():
             TOKEN = f.write(userInput)
 
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def start(update, context):
     """/start command
 
     test"""
-    
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text="I'm a bot, please talk to me!"
+        text="hi"
     )
 
 
 if __name__ == '__main__':
+    getApiKey()
     application = ApplicationBuilder().token(TOKEN).build()
     
     start_handler = CommandHandler('start', start)
