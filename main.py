@@ -16,5 +16,8 @@ if __name__ == '__main__':
     
     start_handler = CommandHandler('start', bot.start)
     application.add_handler(start_handler)
+
+    addEvent_handler = CommandHandler('addEvent', bot.addEvent)
+    application.add_handler(addEvent_handler)
     
     application.run_polling()

@@ -16,3 +16,4 @@ gc = GoogleCalendar('randal0913@gmail.com', credentials_path='./credentials/cred
 
 # for event in gc.get_events(query='test'):
 #     gc.delete_event(event)
+

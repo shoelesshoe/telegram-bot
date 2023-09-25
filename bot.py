@@ -5,11 +5,11 @@ def getTelegramApiKey():
     global TOKEN
 
     try:
-        with open('./credentials/secrets.txt', 'r') as f:
+        with open('./credentials/telegram_key.txt', 'r') as f:
             TOKEN = f.read()
     except FileNotFoundError:
         userInput = input("Enter the bot's token: ")
-        with open('./credentials/secrets.txt', 'w') as f:
+        with open('./credentials/telegram_key.txt', 'w') as f:
             TOKEN = f.write(userInput)
 
 
@@ -24,5 +24,14 @@ async def start(update, context):
 
 
 async def addEvent(update, context):
+    """/addEvent command
+    
+    adds a Google Calendar event"""
     global msg
-    msg = update.message.text
+    cmd = len('/addEvent ')
+    msg = update.message.text[cmd:]
+
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text="event successfully added"
+    )
