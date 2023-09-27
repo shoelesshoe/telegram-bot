@@ -87,10 +87,7 @@ async def addEvent(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     startTime = time[0]
     endTime = time[1]
 
-    copy_of_msg = msg
-    
-
-    matches = datefinder.find_dates(msg)
+    # TODO: look through the message to see whether there are dates using datefinder
 
     reoccurenceRe = 
     eventNameRe = 
