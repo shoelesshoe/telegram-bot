@@ -1,5 +1,5 @@
 import logging
-import bot
+import src.bot as bot
 
 from telegram.ext import ApplicationBuilder, CommandHandler
 
